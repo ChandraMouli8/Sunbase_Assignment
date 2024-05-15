@@ -1,32 +1,20 @@
-@RestController
-@RequestMapping("/api")
-public class UploadController {
-
-    @PostMapping("/upload")
-    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
-        // Process the file, convert to text and chunks
-        // Generate embeddings and store in vector DB
-        return ResponseEntity.ok("File uploaded and processed successfully");
-    }
-
-    @PostMapping("/upload-text")
-    public ResponseEntity<String> uploadText(@RequestBody String text) {
-        // Convert text to chunks
-        // Generate embeddings and store in vector DB
-        return ResponseEntity.ok("Text uploaded and processed successfully");
-    }
-}
-
-
-@RestController
-@RequestMapping("/api")
-public class ChatController {
-
-    @PostMapping("/chat")
-    public ResponseEntity<String> chat(@RequestBody String query) {
-        // Retrieve relevant document embeddings from vector DB
-        // Use prompt engineering to get a response from the language model
-        String response = "Response from the language model";
-        return ResponseEntity.ok(response);
-    }
-}
+src
+└── main
+    ├── java
+    │   └── com
+    │       └── example
+    │           └── ragchatbot
+    │               ├── RAGChatbotApplication.java
+    │               ├── controller
+    │               │   ├── ChatController.java
+    │               │   └── UploadController.java
+    │               ├── service
+    │               │   ├── EmbeddingService.java
+    │               │   └── ChatService.java
+    │               └── model
+    │                   └── Embedding.java
+    └── resources
+        ├── application.properties
+        └── static
+            ├── upload.html
+            └── chat.html
